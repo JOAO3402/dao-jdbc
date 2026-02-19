@@ -1,5 +1,7 @@
 package application;
 
+import model.dao.DaoFactory;
+import model.dao.SellerDao;
 import model.entities.Department;
 import model.entities.Seller;
 
@@ -12,24 +14,13 @@ public class Program {
 
     public static void main(String[] args){
 
-        Scanner sc = new Scanner(System.in);
-
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-
         Department obj = new Department(1, "Books");
 
         System.out.println(obj);
 
-        Date date = null;
+        Seller seller = new Seller(3000.00, new Date() , obj, "bob@gmail.com", 21, "Bob");
 
-        try{
-            date = sdf.parse(sc.nextLine());
-        } catch(ParseException e){
-            System.out.println("Error: " + e.getMessage());
-        }
-
-
-        Seller seller = new Seller(3000.00, date , obj, "bob@gmail.com", 21, "Bob");
+        SellerDao sellerDao = DaoFactory.createSellerDao();
 
         System.out.println(seller);
     }
