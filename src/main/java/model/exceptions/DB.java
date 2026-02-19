@@ -1,4 +1,4 @@
-package db;
+package model.exceptions;
 
 import java.io.FileInputStream;
 import java.io.IOException;
