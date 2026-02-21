@@ -5,7 +5,6 @@ import model.entities.Department;
 import model.entities.Seller;
 import model.exceptions.DB;
 import model.exceptions.DbException;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
