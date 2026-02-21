@@ -5,6 +5,8 @@ import model.dao.DepartmentDao;
 import model.dao.SellerDao;
 import model.entities.Department;
 
+import java.sql.SQLOutput;
+import java.util.List;
 import java.util.Scanner;
 
 public class Program2 {
@@ -15,11 +17,14 @@ public class Program2 {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("==== TEST 7: department delete ====");
-        System.out.println("Enter id for delete test: ");
-        Department dep = new Department(3, "Fashion");
-        Department dep1 = new Department(2, "Eletronics");
-        departmentDao.deleteById(dep, dep1);
-        System.out.println("Delete completed");
+        System.out.println("FindById department test");
+        Department fDepp = departmentDao.findById(1);
+        System.out.println(fDepp);
+
+        System.out.println("FindAll Department TEST");
+        List<Department> list = departmentDao.findAll();
+        for(Department d: list){
+            System.out.println(d);
+        }
     }
 }
