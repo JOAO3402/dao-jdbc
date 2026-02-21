@@ -36,5 +36,27 @@ public class Program {
         Seller newSeller = new Seller(4000.0, new Date(), department, "greg@gmailcom", null, "Greg");
         sellerDao.insert(newSeller);
         System.out.println("Inserted! New Id = " + newSeller.getId());
+
+        System.out.println("\n=== TEST 5: seller update ===");
+        newSeller = sellerDao.findById(10);
+        newSeller.setName("Terence Mann");
+        newSeller.setEmail("mann@gmail.com");
+        sellerDao.update(newSeller);
+
+        newSeller = sellerDao.findById(11);
+        newSeller.setName("Carmen Robinson");
+        newSeller.setEmail("carmen@gmail.com");
+        sellerDao.update(newSeller);
+
+        newSeller = sellerDao.findById(12);
+        newSeller.setName("Cadwell Pope");
+        newSeller.setEmail("cadwell@gmail.com");
+        sellerDao.update(newSeller);
+
+        newSeller = sellerDao.findById(9);
+        newSeller.setName("Bledsoe Scotthurdy");
+        newSeller.setEmail("scott@gmail.com");
+        sellerDao.update(newSeller);
+        System.out.println("Update Complete");
     }
 }
