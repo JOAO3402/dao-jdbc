@@ -26,5 +26,10 @@ public class Program2 {
         for(Department d: list){
             System.out.println(d);
         }
+
+        System.out.println("Insert department TEST");
+        Department dep = new Department(8, "Food");
+        departmentDao.insert(dep);
+        System.out.println(dep);
     }
 }
